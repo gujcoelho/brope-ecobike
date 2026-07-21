@@ -1,0 +1,5 @@
+node_modules/
+.vercel/
+*.b64
+*.pl
+.DS_Store
