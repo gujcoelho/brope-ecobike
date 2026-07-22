@@ -109,7 +109,18 @@
   }
   .nav-links a.link:hover { color: var(--head); }
   .nav-links a.link:hover::after { transform: scaleX(1); }
-  @media (max-width: 860px) { .nav-links { display: none; } }
+  .hamburger { display: none; width: 40px; height: 40px; border: 1px solid var(--line-2); border-radius: 9px; background: transparent; cursor: pointer; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 0; flex: none; }
+  .hamburger span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .25s ease, opacity .2s ease; }
+  .hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  @media (max-width: 860px) {
+    .hamburger { display: flex; }
+    .nav-links { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 2px; background: color-mix(in srgb, var(--bg) 96%, transparent); backdrop-filter: saturate(140%) blur(14px); border-bottom: 1px solid var(--line); padding: 6px 24px 16px; max-height: 0; overflow: hidden; opacity: 0; pointer-events: none; transition: max-height .32s ease, opacity .25s ease, padding .32s ease; }
+    .nav-links.open { max-height: 70vh; opacity: 1; pointer-events: auto; }
+    .nav-links a.link { font-size: 16px; padding: 11px 0; width: 100%; }
+    .nav-links a.link::after { display: none; }
+  }
 
   /* ---------- HERO ---------- */
   .hero { position: relative; padding: 78px 0 44px; overflow: visible; }
@@ -476,8 +487,25 @@
       <a class="link" href="#planos">Planos</a>
     </nav>
     <a class="btn btn-primary" href="#planos">Ver planos</a>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
+
+<script>
+  (function () {
+    var b = document.getElementById('hamburger');
+    var m = document.querySelector('.nav-links');
+    if (!b || !m) return;
+    function toggle(open) {
+      var on = open === undefined ? !b.classList.contains('open') : open;
+      b.classList.toggle('open', on);
+      m.classList.toggle('open', on);
+      b.setAttribute('aria-expanded', on ? 'true' : 'false');
+    }
+    b.addEventListener('click', function () { toggle(); });
+    m.querySelectorAll('a.link').forEach(function (a) { a.addEventListener('click', function () { toggle(false); }); });
+  })();
+</script>
 
 <a id="top"></a>
 
