@@ -1,0 +1,16 @@
+{
+  "slug": "nome-curto-cliente",
+  "cliente": "Nome da Marca",
+  "clienteFull": "Nome Completo da Empresa",
+  "handle": "instagram_do_cliente",
+  "concorrente": "Nome do Concorrente",
+  "cidadeBusca": "Cidade completa (ex.: Santo Amaro da Imperatriz)",
+  "cidades": "Cidades atendidas (ex.: Santo Amaro e Palhoça)",
+  "regiao": "Região (ex.: Grande Florianópolis)",
+  "regiaoCurta": "Região curta (ex.: Grande Floripa)",
+  "produto": "produto principal (ex.: moto elétrica)",
+  "precoEssencial": "R$ 0.000",
+  "precoAvancado": "R$ 0.000",
+  "validade": "15 dias",
+  "data": "00/00/0000"
+}

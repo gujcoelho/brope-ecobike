@@ -1,0 +1,16 @@
+{
+  "slug": "piloto",
+  "cliente": "Sua Empresa",
+  "clienteFull": "Nome Completo da Empresa",
+  "handle": "suaempresa",
+  "concorrente": "seu Concorrente",
+  "cidadeBusca": "sua cidade",
+  "cidades": "suas cidades",
+  "regiao": "sua região",
+  "regiaoCurta": "sua região",
+  "produto": "seu produto",
+  "precoEssencial": "R$ 2.000",
+  "precoAvancado": "R$ 3.500",
+  "validade": "15 dias",
+  "data": "00/00/0000"
+}
