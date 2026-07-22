@@ -3,3 +3,4 @@ node_modules/
 *.b64
 *.pl
 .DS_Store
+dist/
